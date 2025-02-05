@@ -66,6 +66,7 @@ func main() {
 			measurement_record.Set("temperature", sensor_data["temperature"].(float64))
 			measurement_record.Set("humidity", sensor_data["humidity"].(float64))
 			measurement_record.Set("pressure", sensor_data["pressure"].(float64))
+			measurement_record.Set("light", sensor_data["light"].(float64))
 
 			if err = app.Dao().SaveRecord(&measurement_record); err != nil {
 				return c.JSON(500, echo.Map{
